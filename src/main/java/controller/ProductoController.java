@@ -5,14 +5,20 @@
  */
 package controller;
 
+import dao.ProductoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.Date;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.Producto;
 
 /**
  *
@@ -63,7 +69,23 @@ public class ProductoController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String opcion=request.getParameter("opcion");
+        Date fechaActual=new Date();
+        
+        ProductoDAO productoDAO=new ProductoDAO();
+        Producto producto=new Producto();
+        producto.setNombre(request.getParameter("nombre"));
+        producto.setCantidad(Double.parseDouble(request.getParameter("cantidad")));
+        producto.setPrecio(Double.parseDouble(request.getParameter("precio")));        
+        producto.setFechaCrear(new java.sql.Date(fechaActual.getTime()));
+        
+        try {
+            productoDAO.guardar(producto);            
+            System.out.println("registro guardado satisfatoriamente");
+//        processRequest(request, response);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 
