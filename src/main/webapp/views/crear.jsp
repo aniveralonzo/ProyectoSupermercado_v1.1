@@ -14,13 +14,24 @@
     <body>
         <h1>Crear producto</h1>
         <form action="productos" method="post">
-            <table>
+        <td><input type="hidden" name="opcion" value="guardar"></td>                
+            <table border="1">
                 <tr>
                     <td>Nombre:</td>
-                    <td><input type="text" name="nombre"></td>
-                
+                    <td><input type="text" name="nombre" size="50"></td>                
                 </tr>
+                <tr>
+                    <td>Cantidad:</td>
+                    <td><input type="text" name="cantidad" size="50"></td>                
+                </tr>
+                <tr>
+                    <td>Precio:</td>
+                    <td><input type="text" name="precio" size="50"></td>                
+                </tr>
+
+
             </table>
+            <input type="submit" value="Guardar">
             
         </form>
     </body>

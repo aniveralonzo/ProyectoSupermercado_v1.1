@@ -23,13 +23,13 @@ public class ProductoDAO {
     
     //guardar 
     public  boolean guardar(Producto  producto) throws SQLException{
-        String sql=null;
+       // String sql=null;
         estadoOperacion=false;
         connection=obtenerConexion();
 
         try{
             connection.setAutoCommit(false);
-        sql="INSERT INTO productos (id, nombre, cantidad, precio, fecha_crear, fecha_actualizar)VALUES(?,?,?,?,?,?)";   
+        String sql="INSERT INTO productos (id,nombre,cantidad,precio,fecha_crear,fecha_actualizar)VALUES(?,?,?,?,?,?)";   
         statement=connection.prepareStatement(sql);
         
         statement.setString(1,null);//es autoincremento  por es null
@@ -122,7 +122,7 @@ public class ProductoDAO {
     }
     
     //obtener conexion 
-    public Connection obtenerConexion()throws SQLException{
+    private Connection obtenerConexion()throws SQLException{
         return Conexion.getConnection();
     }
     

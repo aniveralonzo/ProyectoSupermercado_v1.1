@@ -22,6 +22,7 @@ public class Producto {
     public Producto(){}
 
     public Producto(int id, String nombre, double cantidad, double precio, Date fechaCrear, Date fechaActualizar) {
+        super();
         this.id = id;
         this.nombre = nombre;
         this.cantidad = cantidad;
@@ -36,7 +37,7 @@ public class Producto {
 
     public void setId(int id) {
         this.id = id;
-    }
+        }
 
     public String getNombre() {
         return nombre;

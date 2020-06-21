@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : 18/06/2020, 20:43:33
-    Author     : user hp
+    Author     : user hp    
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -19,7 +19,7 @@
             </tr>
             <tr>
                 <td><a href="productos?opcion=listar">Listar Producto</a></td>
-            </tr>
+             </tr>
         </table>
     </body>
 </html>

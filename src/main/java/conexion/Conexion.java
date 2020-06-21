@@ -1,20 +1,40 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package conexion;
-        
 import java.sql.Connection;
-import java.sql.DriverManager;
-
+import java.sql.SQLException;
+import javax.sql.DataSource;
+import org.apache.commons.dbcp2.BasicDataSource;
+/**
+ *
+ * @author user hp
+ */
 public class Conexion {
-    public static Connection con;
-    public Conexion(){
-        try{
-//            class.forName("com.mysql.jdbc.Driver");
-                    con=DriverManager.getConnection("jdbc:mysql://localhost:3306/crud","root","Sadmywaleska2020");        
-        }catch(Exception e){
-            System.out.println("Error conexion a basse de datos"+e);
-        }
-    }
+    private static BasicDataSource dataSource=null;
+
+    private static DataSource getDataSource(){
+         if(dataSource==null){
+            dataSource=new BasicDataSource();
+            dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+            dataSource.setUsername("root");
+            dataSource.setPassword("Sadmywaleska2020");
+            dataSource.setUrl("jdbc:mysql://localhost:3306/crud");
+            dataSource.setInitialSize(20);
+            dataSource.setMaxIdle(15);
+            dataSource.setMaxTotal(20);
+            dataSource.setMaxWaitMillis(5000);
         
-        public static Connection getConnection(){
-            return con;
-    }    
+        }
+        return dataSource;
+    
+    }
+    
+    public static Connection getConnection() throws SQLException{
+        return getDataSource().getConnection();    
+    }
+    
+    
 }
