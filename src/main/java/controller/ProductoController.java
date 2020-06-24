@@ -95,7 +95,19 @@ public class ProductoController extends HttpServlet {
 				// TODO Auto-generated catch block
 		e.printStackTrace();
 	    }
-	}
+	}else if(opcion.equals("eliminar")){
+               ProductoDAO productoDAO=new ProductoDAO();
+               int id=Integer.parseInt(request.getParameter("id"));
+               try{
+                   productoDAO.eliminar(id);
+                   System.out.println("registro eliminado satisfactoriamente");
+                   RequestDispatcher requestDispatcher=request.getRequestDispatcher("/index.jsp");
+                   requestDispatcher.forward(request,response);
+               
+               }catch(SQLException e){
+                   e.printStackTrace();               
+               }        
+        }
     }
 
 
