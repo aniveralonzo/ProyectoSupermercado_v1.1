@@ -8,7 +8,9 @@ package dao;
 import conexion.Conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import modelo.Producto;
 
@@ -113,12 +115,66 @@ public class ProductoDAO {
 
 
     //obtener lista producto
-    public  List<Producto> obtenerProducto(){
-        return null;
+    public  List<Producto> obtenerProducto() throws SQLException{
+        ResultSet resultSet=null;
+        List<Producto> listaProductos=new ArrayList<>();
+        
+        String sql=null;
+        estadoOperacion=false;
+        connection=obtenerConexion();
+        try{
+            sql="SELECT * FROM productos";        
+            statement=connection.prepareStatement(sql); 
+            resultSet=statement.executeQuery(sql);
+            while(resultSet.next()){
+                Producto p=new Producto();
+                p.setId(resultSet.getInt(1));
+                p.setNombre(resultSet.getString(2));            
+                p.setCantidad(resultSet.getDouble(3));
+                p.setPrecio(resultSet.getDouble(4));
+                p.setFechaCrear(resultSet.getDate(5));
+                p.setFechaActualizar(resultSet.getDate(6)); 
+                listaProductos.add(p);
+            }
+        }catch(SQLException e){
+            e.printStackTrace();        
+        }        
+        return listaProductos;
     }
+    
+    
+    
+    
+    
     //obtener lista producto
-    public Producto obtenerProducto(int idProducto){
-        return null;
+    public Producto obtenerProducto(int idProducto) throws SQLException{
+        ResultSet resultSet = null;
+	Producto p=new Producto();
+
+	String sql = null;
+	estadoOperacion = false;
+	connection = obtenerConexion();
+
+	try {
+	    sql = "SELECT * FROM productos WHERE id =?";
+	    statement=connection.prepareStatement(sql);
+	    statement.setInt(1, idProducto);
+			
+	    resultSet = statement.executeQuery();
+			
+	    if(resultSet.next()) {				
+		p.setId(resultSet.getInt(1));
+		p.setNombre(resultSet.getString(2));
+		p.setCantidad(resultSet.getDouble(3));
+		p.setPrecio(resultSet.getDouble(4));
+		p.setFechaCrear(resultSet.getDate(5));
+		p.setFechaActualizar(resultSet.getDate(6));
+		}
+
+	    } catch (SQLException e) {
+		e.printStackTrace();
+		}
+	return p;
     }
     
     //obtener conexion 
