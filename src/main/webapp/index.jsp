@@ -9,16 +9,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Menu de opciones</title>
+        <title>Aniver_website</title>
     </head>
-    <body>
-        <h1>Menu de Opciones</h1>
+    <body bgcolor="silver">
+        <h1>Productos de Supermercado</h1>
         <table bordercolor="l">
             <tr>
-                <td><a href="productos?opcion=crear">Crear un Producto</a></td>
+                <td><a href="productos?opcion=crear">INGRESAR PRODUCTO</a></td>
             </tr>
             <tr>
-                <td><a href="productos?opcion=listar">Listar Producto</a></td>
+                <td><a href="productos?opcion=listar">LISTA DE PRODUCTOS</a></td>
              </tr>
         </table>
     </body>

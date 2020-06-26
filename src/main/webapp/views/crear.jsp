@@ -9,9 +9,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>CREAR PRODUCTO</title>
+        <title>Aniver_website</title>
     </head>
-    <body>
+    <body bgcolor="silver">
         <h1>Crear producto</h1>
         <form action="productos" method="post">
         <td><input type="hidden" name="opcion" value="guardar"></td>                

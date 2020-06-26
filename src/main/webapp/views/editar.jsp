@@ -10,9 +10,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>EDITAR PRODUCTO</title>
+        <title>Aniver_website</title>
     </head>
-    <body>
+    <body bgcolor="silver">
         <h1>Editar Producto</h1>
         <form action="productos" method="post">
         <c:set var="producto" value="${producto}"> </c:set>

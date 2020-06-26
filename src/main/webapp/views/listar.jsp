@@ -12,19 +12,19 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>LISTAR PRODUCTO</title>
+        <title>Aniver_website</title>
     </head>
-    <body>
-        <h1>Listar producto</h1>
+    <body bgcolor="silver">
+        <h1>Lista de productos</h1>
         <table border="1">
             <tr>
-                <td>ID</td>
-                <td>NOMBRE</td>                
-                <td>CANTIDAD</td>
-                <td>PRECIO</td>
-                <td>Fecha Creacion</td>
-                <td>Fecha Actualizacion</td>
-                <td>Accion</td>
+                <td>ID  </td>
+                <td>Nombre  </td>                
+                <td>Cantidad  </td>
+                <td>Precio  </td>
+                <td>Fecha Creacion  </td>
+                <td>Fecha Actualizacion  </td>
+                <td>Opcion  </td>
             </tr>
             <c:forEach var="producto" items="${lista}">
             <tr>
