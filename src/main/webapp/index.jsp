@@ -12,6 +12,7 @@
         <title>Aniver_website</title>
     </head>
     <body bgcolor="silver">
+        
         <h1>Productos de Supermercado</h1>
         <table bordercolor="l">
             <tr>
