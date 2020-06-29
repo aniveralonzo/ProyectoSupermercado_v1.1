@@ -14,7 +14,7 @@ JSP.
 
 ### Requisitos usados en el proyecto 📋
 
-Principalmente los programas utilizados: Apache NetBeans IDE 11.3,
+Los programas utilizados: Apache NetBeans IDE 11.3,
 MySQL Workbench 8.0 CE en donde se use el siguient tipo de conexion
 
 ```
@@ -55,7 +55,7 @@ Utilizando principal servlet ProductoController.java para la conexion de clases.
 
 ## Informacion para Ejecutar Programa
 
-principalmente genera un pequeño menu de ingreso de producto y mostrar los productos,
+Principalmente genera un pequeño menu de ingreso de producto y mostrar los productos,
 la cual en cada fila de cada producto el codigo que genera automaticamente dara un link para poder modificarlo
 como tambien en la parte derecha mostrara la opcion de eliminar el producto.
 
