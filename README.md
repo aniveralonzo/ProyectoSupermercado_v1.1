@@ -69,7 +69,7 @@ Se uso para crear este proyecto la siguiente herramienta
 
 ## Link del Repositorio
 
- [repositorio](https://github.com/).
+ [repositorio](https://github.com/aniveralonzo/ProyectoSupermercado_v1.1).
 
 ## Autor ✒️
 
