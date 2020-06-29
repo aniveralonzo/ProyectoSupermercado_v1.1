@@ -33,7 +33,7 @@ private static DataSource getDataSource(){
         }
         return dataSource;
     
-    }Da un ejemplo
+    }
 ```
 
 ### Desarrolo del proyecto
