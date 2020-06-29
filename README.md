@@ -14,7 +14,7 @@ JSP.
 
 ### Requisitos usados en el proyecto 📋
 
-Principalmente los programas utilizados: Apache NetBeans IDE 11.3
+Principalmente los programas utilizados: Apache NetBeans IDE 11.3,
 MySQL Workbench 8.0 CE en donde se use el siguient tipo de conexion
 
 ```
@@ -38,7 +38,7 @@ private static DataSource getDataSource(){
 
 ### Desarrolo del proyecto
 
-Utilizando principal servlet ProductoController para la conexion de clases.java y jsp
+Utilizando principal servlet ProductoController.java para la conexion de clases.java y jsp
 ```
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
